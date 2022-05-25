@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { corPrimaria, frequenciaC, ingresso, maiorN, dobro, somar, temperatura, passou, tabuada} from './services.js';
+import { dobro, somar, temperatura, passou, tabuada, corPrimaria, frequenciaC, ingresso, maiorN} from './services.js';
 const server = Router();
 
 server.get('/dobro/:numero', (req, resp)=> 
@@ -63,7 +63,7 @@ server.get('/tabuada', (req, resp)=>{
     resp.send({
       tabuada: resposta
     })
-} catch(err){
+} catch(err){ 
     resp.status(404).send({
         erro: err.message
     })
@@ -86,7 +86,7 @@ server.post('/passou', (req,resp) =>{
 
 server.get ('/dia2/corprimaria/:cor', (req, resp) => {
     try{
-        const {cor} = req.params;
+        const { cor } = req.params;
         const primaria = corPrimaria (cor);
         resp.send({
          primaria : primaria
@@ -114,7 +114,7 @@ server.post('/dia2/ingressosc', (req, resp ) => {
     }
 })
 
-server.get('/dia2/freqcaracter/:texto/:caractere', (req, resp) => {
+server.get('/dia2/freqcaractere/:texto/:caractere', (req, resp) => {
     try{
         const { texto, caractere} = req.params;
         const freq = frequenciaC ( texto, caractere);
@@ -129,10 +129,10 @@ server.get('/dia2/freqcaracter/:texto/:caractere', (req, resp) => {
     }
 })
 
-server.post ('/dia2/maiorN', (req, resp) => {
+server.post('/dia2/maiorNumero', (req, resp) => {
     try{
-        const numero = req.body;
-        const maior = maiorN(numero);
+        const numeros = req.body;
+        const maior = maiorN(numeros);
         resp.send ({
             maior : maior
         });

@@ -1,7 +1,3 @@
-export function corPrimaria(cor) {
-    cor = cor.toLowerCase();
-    return cor == 'azul' || cor == 'amarelo' || cor == 'vermelho'
-}
 
 export function dobro(n){
     return n*2;
@@ -39,6 +35,12 @@ export function tabuada(numero){
     return tabu;
 }
 
+export function corPrimaria(cor) {
+    cor = cor.toLowerCase();
+    return cor == 'azul' || cor == 'amarelo' || cor == 'vermelho'
+
+}
+
 export function ingresso (qtdInteiras, qtdMeias, diaSemana, nacionalidade){
     if(nacionalidade.toLowerCase() == 'brasileira')
     return(qtdInteiras * qtdMeias) * 5;
@@ -59,7 +61,7 @@ export function frequenciaC (texto, caractere){
  return qnt;
 }
 
-export function maiorN (numeros){
+export function maiorN(numeros){
 let maior = Number.MIN_VALUE;
 for(let item of numeros) {
     if (item > maior )
